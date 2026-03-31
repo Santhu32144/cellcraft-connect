@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span>Shop No. 1, Main Market,<br />New Delhi, India</span>
+                <span>Shop No. 1, Main Market,<br />Tumkur, India</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary" /> Mon–Sat: 10AM – 8PM

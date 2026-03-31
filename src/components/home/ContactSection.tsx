@@ -119,7 +119,7 @@ const ContactSection = () => {
               <div>
                 <div className="font-medium text-foreground">Visit Us</div>
                 <p className="text-muted-foreground text-sm">
-                  Shop No. 1, Main Market, New Delhi, India
+                  Shop No. 1, Main Market, Tumkur, India
                 </p>
               </div>
             </div>
