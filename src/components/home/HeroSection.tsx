@@ -63,10 +63,10 @@ const HeroSection = () => {
         </video>
       </div>
 
-      {/* Dark overlay - lighter to show more video */}
-      <div className="absolute inset-0 bg-background/55" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+      {/* Dark overlay - light enough to see video clearly */}
+      <div className="absolute inset-0 bg-background/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]"
