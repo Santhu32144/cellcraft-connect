@@ -2,7 +2,9 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Shield, Cpu, Zap, ChevronLeft, ChevronRight, Wrench, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroVideo from "@/assets/hero-video.mp4";
+import heroVideo1 from "@/assets/hero-video.mp4";
+import heroVideo2Url from "@/assets/hero-video-2.mp4.asset.json";
+import heroVideo3Url from "@/assets/hero-video-3.mp4.asset.json";
 
 const slides = [
   {
@@ -11,6 +13,7 @@ const slides = [
     title: "Advanced Mobile",
     highlight: "Repair & Service",
     description: "From chip-level repairs to screen replacements — we bring your device back to life with precision, care, and guaranteed results.",
+    video: heroVideo1,
   },
   {
     badge: "Chip-Level Specialists",
@@ -18,6 +21,7 @@ const slides = [
     title: "Precision",
     highlight: "Motherboard Repair",
     description: "Expert micro-soldering and chip-level diagnostics to fix even the most complex hardware issues your device faces.",
+    video: heroVideo2Url.url,
   },
   {
     badge: "Same Day Service",
@@ -25,6 +29,7 @@ const slides = [
     title: "Premium Screen",
     highlight: "Replacement",
     description: "Original quality displays fitted with care. Walk in with a cracked screen, walk out with a phone that looks brand new.",
+    video: heroVideo3Url.url,
   },
 ];
 
@@ -50,23 +55,32 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
+      {/* Video Background - changes per slide */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
         >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-      </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={slide.video} type="video/mp4" />
+          </video>
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Dark overlay - light enough to see video clearly */}
-      <div className="absolute inset-0 bg-background/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
+      {/* Light overlay - kept minimal so video is bright and visible */}
+      <div className="absolute inset-0 bg-background/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/55 via-background/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/20" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]"
@@ -145,7 +159,7 @@ const HeroSection = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* CTAs - outside AnimatePresence so they don't animate on slide change */}
+            {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 to="/services"
