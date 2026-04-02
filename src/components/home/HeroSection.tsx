@@ -55,15 +55,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Video Background - changes per slide */}
-      <AnimatePresence mode="wait">
+      {/* Video Background - all videos play continuously, only opacity toggles */}
+      {slides.map((s, i) => (
         <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          key={i}
+          initial={false}
+          animate={{ opacity: i === current ? 1 : 0 }}
           transition={{ duration: 0.8 }}
           className="absolute inset-0"
+          style={{ zIndex: i === current ? 1 : 0 }}
         >
           <video
             autoPlay
@@ -72,10 +72,10 @@ const HeroSection = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src={slide.video} type="video/mp4" />
+            <source src={s.video} type="video/mp4" />
           </video>
         </motion.div>
-      </AnimatePresence>
+      ))}
 
       {/* Light overlay - kept minimal so video is bright and visible */}
       <div className="absolute inset-0 bg-background/25" />
