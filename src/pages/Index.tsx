@@ -12,6 +12,7 @@ import ScrollRotatingElements from "@/components/home/ScrollRotatingElements";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollRotatingElements />
       <Navbar />
       <HeroSection />
       <ServicesSection />
