@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index.tsx";
 import Services from "./pages/Services.tsx";
 import Gallery from "./pages/Gallery.tsx";
