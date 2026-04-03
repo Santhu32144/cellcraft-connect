@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/components/ThemeProvider";
 import logo from "@/assets/logo.png";
 
 const navItems = [
@@ -15,6 +16,7 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
@@ -40,6 +42,13 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
           <a
             href="https://wa.me/919999999999"
             target="_blank"
@@ -85,6 +94,13 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex gap-3 pt-2">
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-secondary text-foreground text-sm font-medium"
+                >
+                  {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  {theme === "dark" ? "Light" : "Dark"}
+                </button>
                 <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-foreground text-sm font-medium">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
