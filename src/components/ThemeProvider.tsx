@@ -19,9 +19,12 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const root = document.documentElement;
+    root.classList.add("theme-transition");
     root.classList.remove("light", "dark");
     root.classList.add(theme);
     localStorage.setItem("theme", theme);
+    const timeout = setTimeout(() => root.classList.remove("theme-transition"), 450);
+    return () => clearTimeout(timeout);
   }, [theme]);
 
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
