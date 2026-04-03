@@ -35,7 +35,8 @@ const WhyChooseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex gap-4"
+              whileHover={{ scale: 1.03, x: 8 }}
+              className="flex gap-4 p-4 rounded-xl hover:bg-card/50 transition-colors cursor-pointer"
             >
               <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center glow-border">
                 <r.icon className="h-6 w-6 text-primary" />

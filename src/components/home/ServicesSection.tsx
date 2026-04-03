@@ -38,7 +38,9 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group glass rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+              whileHover={{ scale: 1.05, rotateY: 5, rotateX: -3 }}
+              className="group glass rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] cursor-pointer"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <service.icon className="h-6 w-6 text-primary" />
