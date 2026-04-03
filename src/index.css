@@ -134,6 +134,10 @@
     @apply bg-card/60 backdrop-blur-xl border border-border/50;
   }
 
+  .light .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-border shadow-sm;
+  }
+
   .section-padding {
     @apply py-20 md:py-28 px-4 md:px-8;
   }
