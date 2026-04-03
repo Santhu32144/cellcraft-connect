@@ -94,6 +94,13 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex gap-3 pt-2">
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-secondary text-foreground text-sm font-medium"
+                >
+                  {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  {theme === "dark" ? "Light" : "Dark"}
+                </button>
                 <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-foreground text-sm font-medium">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
