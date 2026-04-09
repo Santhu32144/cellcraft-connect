@@ -61,7 +61,7 @@ const HeroSection = () => {
           key={i}
           initial={false}
           animate={{ opacity: i === current ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 2 }}
           className="absolute inset-0"
           style={{ zIndex: i === current ? 1 : 0 }}
         >
@@ -70,7 +70,7 @@ const HeroSection = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-75"
           >
             <source src={s.video} type="video/mp4" />
           </video>
@@ -245,7 +245,7 @@ const HeroSection = () => {
               transition={{ delay: 1, duration: 0.6 }}
               className="absolute right-4 md:right-20 bottom-0"
             >
-              <div className="glass rounded-2xl p-6 glow-border">
+              {/* <div className="glass rounded-2xl p-6 glow-border">
                 <div className="grid grid-cols-3 gap-6">
                   {[
                     { value: "10K+", label: "Fixed" },
@@ -258,7 +258,7 @@ const HeroSection = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
