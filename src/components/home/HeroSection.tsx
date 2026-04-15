@@ -1,11 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Shield, Cpu, Zap, ChevronLeft, ChevronRight, Wrench, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroVideo1 from "@/assets/hero-video.mp4";
-import heroVideo2Url from "@/assets/hero-video-2.mp4.asset.json";
-import heroVideo3Url from "@/assets/hero-video-3.mp4.asset.json";
-
+import heroVideo2 from "@/assets/hero-video-2.mp4";
+import heroVideo3 from "@/assets/hero-video-3.mp4";
 const slides = [
   {
     badge: "Certified Repair Experts",
@@ -21,7 +20,7 @@ const slides = [
     title: "Precision",
     highlight: "Motherboard Repair",
     description: "Expert micro-soldering and chip-level diagnostics to fix even the most complex hardware issues your device faces.",
-    video: heroVideo2Url.url,
+    video: heroVideo2,
   },
   {
     badge: "Same Day Service",
@@ -29,7 +28,7 @@ const slides = [
     title: "Premium Screen",
     highlight: "Replacement",
     description: "Original quality displays fitted with care. Walk in with a cracked screen, walk out with a phone that looks brand new.",
-    video: heroVideo3Url.url,
+    video: heroVideo3,
   },
 ];
 
@@ -41,6 +40,15 @@ const floatingCards = [
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const [videosReady, setVideosReady] = useState<boolean[]>([false, false, false]);
+
+  const handleVideoReady = useCallback((index: number) => {
+    setVideosReady((prev) => {
+      const next = [...prev];
+      next[index] = true;
+      return next;
+    });
+  }, []);
 
   const next = useCallback(() => setCurrent((p) => (p + 1) % slides.length), []);
   const prev = useCallback(() => setCurrent((p) => (p - 1 + slides.length) % slides.length), []);
@@ -55,6 +63,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Loading skeleton */}
+      {!videosReady[current] && (
+        <div className="absolute inset-0 z-[2] bg-muted animate-pulse flex items-center justify-center">
+          <div className="h-10 w-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+
       {/* Video Background - all videos play continuously, only opacity toggles */}
       {slides.map((s, i) => (
         <motion.div
@@ -70,6 +85,7 @@ const HeroSection = () => {
             loop
             muted
             playsInline
+            onCanPlayThrough={() => handleVideoReady(i)}
             className="w-full h-full object-cover brightness-75"
           >
             <source src={s.video} type="video/mp4" />
