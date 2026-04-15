@@ -132,10 +132,25 @@
 
   .glass {
     @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .glass:hover {
+    box-shadow: 0 8px 24px -6px hsl(var(--primary) / 0.2),
+                0 0 20px -5px hsl(var(--primary) / 0.08);
+    transform: translateY(-1px);
   }
 
   .light .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-border shadow-sm;
+    @apply bg-white/90 backdrop-blur-xl border border-border shadow-sm;
+    box-shadow: 0 2px 8px -2px hsl(var(--foreground) / 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .light .glass:hover {
+    box-shadow: 0 12px 32px -8px hsl(var(--foreground) / 0.15),
+                0 4px 12px -4px hsl(var(--primary) / 0.12);
+    transform: translateY(-2px);
   }
 
   .section-padding {
