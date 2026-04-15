@@ -40,6 +40,15 @@ const floatingCards = [
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const [videosReady, setVideosReady] = useState<boolean[]>([false, false, false]);
+
+  const handleVideoReady = useCallback((index: number) => {
+    setVideosReady((prev) => {
+      const next = [...prev];
+      next[index] = true;
+      return next;
+    });
+  }, []);
 
   const next = useCallback(() => setCurrent((p) => (p + 1) % slides.length), []);
   const prev = useCallback(() => setCurrent((p) => (p - 1 + slides.length) % slides.length), []);
