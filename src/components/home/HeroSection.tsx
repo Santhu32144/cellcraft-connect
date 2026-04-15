@@ -63,6 +63,13 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Loading skeleton */}
+      {!videosReady[current] && (
+        <div className="absolute inset-0 z-[2] bg-muted animate-pulse flex items-center justify-center">
+          <div className="h-10 w-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+
       {/* Video Background - all videos play continuously, only opacity toggles */}
       {slides.map((s, i) => (
         <motion.div
@@ -78,6 +85,7 @@ const HeroSection = () => {
             loop
             muted
             playsInline
+            onCanPlayThrough={() => handleVideoReady(i)}
             className="w-full h-full object-cover brightness-75"
           >
             <source src={s.video} type="video/mp4" />
