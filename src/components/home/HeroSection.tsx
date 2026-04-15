@@ -20,7 +20,7 @@ const slides = [
     title: "Precision",
     highlight: "Motherboard Repair",
     description: "Expert micro-soldering and chip-level diagnostics to fix even the most complex hardware issues your device faces.",
-    video: heroVideo2Url.url,
+    video: heroVideo2,
   },
   {
     badge: "Same Day Service",
@@ -28,7 +28,7 @@ const slides = [
     title: "Premium Screen",
     highlight: "Replacement",
     description: "Original quality displays fitted with care. Walk in with a cracked screen, walk out with a phone that looks brand new.",
-    video: heroVideo3Url.url,
+    video: heroVideo3,
   },
 ];
 
