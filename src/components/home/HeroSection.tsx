@@ -100,10 +100,10 @@ const HeroSection = () => {
         </motion.div>
       ))}
 
-      {/* Light overlay - kept minimal so video is bright and visible */}
-      <div className="absolute inset-0 bg-background/25 dark:bg-background/25 bg-white/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 dark:from-background/55 via-background/35 dark:via-background/25 to-transparent bg-gradient-to-r from-white/80 dark:from-background/55 via-white/50 dark:via-background/25 to-transparent/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 dark:from-background/60 via-transparent to-background/30 dark:to-background/20 bg-gradient-to-t from-white/90 dark:from-background/60 via-white/20 dark:via-transparent to-white/40 dark:to-background/20" />
+      {/* Overlays for text readability */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-background/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 dark:from-background/55 via-black/30 dark:via-background/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 dark:from-background/60 via-transparent to-black/20 dark:to-background/20" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]"
