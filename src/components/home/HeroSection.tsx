@@ -156,7 +156,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15, duration: 0.5 }}
-                    className="block text-foreground"
+                    className="block text-white dark:text-foreground"
                   >
                     {slide.title}
                   </motion.span>
@@ -175,7 +175,7 @@ const HeroSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.35 }}
-                  className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+                  className="text-white/70 dark:text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
                 >
                   {slide.description}
                 </motion.p>
