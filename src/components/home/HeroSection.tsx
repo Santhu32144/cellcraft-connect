@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Shield, Cpu, Zap, ChevronLeft, ChevronRight, Wrench, Smartphone } from "lucide-react";
+import { ArrowRight, Shield, Cpu, Zap, ChevronLeft, ChevronRight, ChevronDown, Wrench, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroVideo1 from "@/assets/hero-video.mp4";
 import heroVideo2 from "@/assets/hero-video-2.mp4";
