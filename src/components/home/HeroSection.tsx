@@ -193,7 +193,7 @@ const HeroSection = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass text-foreground font-semibold hover:bg-card transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass text-white dark:text-foreground font-semibold hover:bg-white/20 dark:hover:bg-card transition-colors"
               >
                 Get a Quote
               </Link>
@@ -201,7 +201,7 @@ const HeroSection = () => {
 
             {/* Slider Controls */}
             <div className="flex items-center gap-5">
-              <button onClick={prev} className="p-2.5 rounded-full glass hover:bg-card transition-colors text-foreground" aria-label="Previous slide">
+              <button onClick={prev} className="p-2.5 rounded-full glass hover:bg-white/20 dark:hover:bg-card transition-colors text-white dark:text-foreground" aria-label="Previous slide">
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <div className="flex gap-2 items-center">
@@ -226,10 +226,10 @@ const HeroSection = () => {
                   </button>
                 ))}
               </div>
-              <button onClick={next} className="p-2.5 rounded-full glass hover:bg-card transition-colors text-foreground" aria-label="Next slide">
+              <button onClick={next} className="p-2.5 rounded-full glass hover:bg-white/20 dark:hover:bg-card transition-colors text-white dark:text-foreground" aria-label="Next slide">
                 <ChevronRight className="h-5 w-5" />
               </button>
-              <span className="text-muted-foreground text-sm font-mono ml-2">
+              <span className="text-white/60 dark:text-muted-foreground text-sm font-mono ml-2">
                 {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
               </span>
             </div>
