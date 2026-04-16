@@ -91,6 +91,7 @@ const HeroSection = () => {
             loop
             muted
             playsInline
+            poster={s.poster}
             onCanPlayThrough={() => handleVideoReady(i)}
             className="w-full h-full object-cover brightness-75"
           >
