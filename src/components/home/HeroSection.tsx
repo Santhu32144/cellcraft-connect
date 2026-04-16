@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import heroVideo1 from "@/assets/hero-video.mp4";
 import heroVideo2 from "@/assets/hero-video-2.mp4";
 import heroVideo3 from "@/assets/hero-video-3.mp4";
+import heroPoster1 from "@/assets/hero-poster-1.jpg";
+import heroPoster2 from "@/assets/hero-poster-2.jpg";
+import heroPoster3 from "@/assets/hero-poster-3.jpg";
 const slides = [
   {
     badge: "Certified Repair Experts",
