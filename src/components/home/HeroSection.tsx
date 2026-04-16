@@ -309,6 +309,24 @@ const HeroSection = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+
+      {/* Scroll down indicator */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/60 dark:text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+        aria-label="Scroll down"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="h-5 w-5" />
+        </motion.div>
+      </motion.button>
     </section>
   );
 };
