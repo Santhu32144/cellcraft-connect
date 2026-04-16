@@ -16,6 +16,7 @@ const slides = [
     highlight: "Repair & Service",
     description: "From chip-level repairs to screen replacements — we bring your device back to life with precision, care, and guaranteed results.",
     video: heroVideo1,
+    poster: heroPoster1,
   },
   {
     badge: "Chip-Level Specialists",
@@ -24,6 +25,7 @@ const slides = [
     highlight: "Motherboard Repair",
     description: "Expert micro-soldering and chip-level diagnostics to fix even the most complex hardware issues your device faces.",
     video: heroVideo2,
+    poster: heroPoster2,
   },
   {
     badge: "Same Day Service",
@@ -32,6 +34,7 @@ const slides = [
     highlight: "Replacement",
     description: "Original quality displays fitted with care. Walk in with a cracked screen, walk out with a phone that looks brand new.",
     video: heroVideo3,
+    poster: heroPoster3,
   },
 ];
 
