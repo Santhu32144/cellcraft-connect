@@ -100,10 +100,10 @@ const HeroSection = () => {
         </motion.div>
       ))}
 
-      {/* Light overlay - kept minimal so video is bright and visible */}
-      <div className="absolute inset-0 bg-background/25 dark:bg-background/25 bg-white/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 dark:from-background/55 via-background/35 dark:via-background/25 to-transparent bg-gradient-to-r from-white/80 dark:from-background/55 via-white/50 dark:via-background/25 to-transparent/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 dark:from-background/60 via-transparent to-background/30 dark:to-background/20 bg-gradient-to-t from-white/90 dark:from-background/60 via-white/20 dark:via-transparent to-white/40 dark:to-background/20" />
+      {/* Overlays for text readability */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-background/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 dark:from-background/55 via-black/30 dark:via-background/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 dark:from-background/60 via-transparent to-black/20 dark:to-background/20" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 opacity-[0.03]"
@@ -156,7 +156,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15, duration: 0.5 }}
-                    className="block text-foreground"
+                    className="block text-white dark:text-foreground"
                   >
                     {slide.title}
                   </motion.span>
@@ -175,7 +175,7 @@ const HeroSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.35 }}
-                  className="text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+                  className="text-white/70 dark:text-muted-foreground text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
                 >
                   {slide.description}
                 </motion.p>
@@ -193,7 +193,7 @@ const HeroSection = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass text-foreground font-semibold hover:bg-card transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass text-white dark:text-foreground font-semibold hover:bg-white/20 dark:hover:bg-card transition-colors"
               >
                 Get a Quote
               </Link>
@@ -201,7 +201,7 @@ const HeroSection = () => {
 
             {/* Slider Controls */}
             <div className="flex items-center gap-5">
-              <button onClick={prev} className="p-2.5 rounded-full glass hover:bg-card transition-colors text-foreground" aria-label="Previous slide">
+              <button onClick={prev} className="p-2.5 rounded-full glass hover:bg-white/20 dark:hover:bg-card transition-colors text-white dark:text-foreground" aria-label="Previous slide">
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <div className="flex gap-2 items-center">
@@ -226,10 +226,10 @@ const HeroSection = () => {
                   </button>
                 ))}
               </div>
-              <button onClick={next} className="p-2.5 rounded-full glass hover:bg-card transition-colors text-foreground" aria-label="Next slide">
+              <button onClick={next} className="p-2.5 rounded-full glass hover:bg-white/20 dark:hover:bg-card transition-colors text-white dark:text-foreground" aria-label="Next slide">
                 <ChevronRight className="h-5 w-5" />
               </button>
-              <span className="text-muted-foreground text-sm font-mono ml-2">
+              <span className="text-white/60 dark:text-muted-foreground text-sm font-mono ml-2">
                 {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
               </span>
             </div>
